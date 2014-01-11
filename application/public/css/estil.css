@@ -15,8 +15,12 @@ and open the template in the editor.
 }
 body{
     font-family: Gill,sans-serif;
+    background-color: #cc0000;
 }
 header{
     background-color: #000;
     color:#FFF;
+}
+#container{
+     background-color: #cc0000;
 }
