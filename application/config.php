@@ -6,10 +6,11 @@
  * and open the template in the editor.
  */
     $config = Config::getInstance();
+    $config->driver='mysql';
     $config->dbhost='localhost';
-    $config->dbname='test';
+    $config->dbname='agency';
     $config->dbuser='root';
-    $config->dbpass='';
+    $config->dbpass='toor';
     $config->app_='';
     
            

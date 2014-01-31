@@ -11,7 +11,7 @@
  *
  * @author toni
  */
-class Model extends Database{
+class Model {
     /**
      *
      * @datain array , per comunicar amb BBDD
@@ -24,7 +24,7 @@ class Model extends Database{
     protected $dataout=array();
     
     function __construct($arr) {
-        parent::__construct();
+        $this->db=SPDO::singleton();
         $this->datain=array();
         $this->dataout=$arr;
     }
