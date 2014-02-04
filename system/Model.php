@@ -19,14 +19,17 @@ class Model {
      * 
      */
     protected $db;
+    protected $stmt;
     protected $config;
     protected $datain=array();
     protected $dataout=array();
     
     function __construct($arr) {
         $this->db=SPDO::singleton();
+        $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->datain=array();
         $this->dataout=$arr;
+
     }
     
     public function setDatain($arr){
@@ -55,5 +58,19 @@ class Model {
     }
     public function getDataout(){
         return $this->dataout;
+    }
+    /**
+     * funcions associades a l'us de la base de dades
+     */
+    /**
+     * Consulta segura
+     * @param type $sql
+     */
+    public function prepara($sql){
+        $this->$stmt=$this->db->prepare($sql);
+             
+    }
+    public function exec($array){
+        $this->db->exec($array);
     }
 }

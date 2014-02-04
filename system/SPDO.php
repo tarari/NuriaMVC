@@ -8,7 +8,7 @@
                     $config = Config::getInstance();
                     try{
                         parent::__construct($config->driver.':host=' . $config->dbhost . ';dbname=' .$config->dbname,$config->dbuser, $config->dbpass);}
-                     catch (PDOException $e) {
+                    catch (PDOException $e) {
                      echo 'Connection failed: ' . $e->getMessage();}
 
             }
