@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="ca">
-    <head>
-        <title>Prova MVC-User</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="{APP_W}/application/public/css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="{APP_W}/application/public/css/estil.css" />
-    </head>
-    <body>
-        <header><h1>Prova MVC- User</h1></header>
-        <div id="container">
-            <p>El total de lletres del {camp} és: {leng}</p>
-        </div>
-    </body>
+<head>
+	<title>trav agency</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{APP_W}/application/public/css/estil.css">
+	<!-- jQuery library (served from Google) -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <!-- bxSlider Javascript file -->
+        <script src="{APP_W}/application/public/js/jquery.bxslider.min.js"></script>
+        <!-- bxSlider CSS file -->
+        <link href="{APP_W}/application/public/css/jquery.bxslider.css" rel="stylesheet" />
+        <script>
+            $(document).ready(function(){
+                $('.bxslider').bxSlider();
+            });
+        </script>
+</head>
+<body>
+
+	<div id="container">
+
+		<div id="header">
+                    <div id="ident"><ul><li><a href="#">Login&nbsp;</a></li><li><a href="#">&nbsp;Cistell</a></li></ul></div>
+			<h1 style="margin-bottom:0;">Travel Agency</h1>
+		</div>
+		
+		<div id="menu">
+			<ul>
+				<a href="#"><li>Hotels</li></a>
+				<a href="#"><li>Clients</li></a>
+				<a href="#"><li>Plans</li></a>
+				<a href="#"><li>Vols</li></a>
+			</ul>
+			</div>
+
+		<div id="content" >
+                    <div id="slide">
+                        <ul class="bxslider">
+                            <li><img src="{APP_W}/application/public/img/pic1.jpg" /></li>
+                            <li><img src="{APP_W}/application/public/img/pic2.jpg" /></li>
+                            <li><img src="{APP_W}/application/public/img/pic3.jpg" /></li>
+                            <li><img src="{APP_W}/application/public/img/pic1.jpg" /></li>
+                        </ul>
+                    </div>
+		Content goes here</div>
+
+		<div id="footer" >
+		<h6>Copyright © Travency</h6></div>
+
+	</div>
+ 
+</body>
 </html>

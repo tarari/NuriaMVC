@@ -40,5 +40,11 @@ class IndexModel extends Model{
         
         $this->dataout=array('suma'=>array_sum($arreglo_val));
     }
+    public function users(){
+        $sql="SELEC * FROM USERS";
+        $this->prepara($sql);
+        $this->exec($array);
+        
+    }
     
 }
