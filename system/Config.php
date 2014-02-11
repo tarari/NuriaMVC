@@ -45,4 +45,11 @@ class Config {
     public function getData(){
         return $this->data;
     }
+    
+    function JSON(){
+        $arr_json=json_decode(file_get_contents(APP.'Config.json'));
+        foreach ($arr_json as $key=>$value) {
+            $this->data[$key] = $value;
+        }
+    }
 }

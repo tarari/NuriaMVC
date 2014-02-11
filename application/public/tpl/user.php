@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-	<title>trav agency</title>
+	<title>trav agency-users</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="{APP_W}/application/public/css/estil.css">
 	<!-- jQuery library (served from Google) -->
@@ -22,7 +22,7 @@
 
 		<div id="header">
                     <div id="ident"><ul><li><a href="#">Login&nbsp;</a></li><li><a href="#">&nbsp;Cistell</a></li></ul></div>
-			<h1 style="margin-bottom:0;">Travel Agency</h1>
+			<h1 style="margin-bottom:0;">Travel Agency - Users</h1>
 		</div>
 		
 		<div id="menu">

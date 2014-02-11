@@ -9,7 +9,7 @@
      // en constants.php desem la informació rellevant d'enllaços
      // i títols
      // Es requereix config.php per configurar l'accés a BBDD
-     require_once APP.'config.php';
+     //require_once APP.'config.php';
      // Es requereix constants.php per definir diccionari de l'aplicació
      require_once APP.'constants.php';
      
@@ -17,7 +17,8 @@
                
         static function run(){
             try{
-                    
+                $conf=Config::getInstance();
+                $conf->JSON();
                 $front= Bootstrap::getInstance();
                 $front->route();
             } catch(Exception $e){
@@ -26,8 +27,4 @@
         }
     }
     Index::run();
-//    $config=  Config::getInstance();
-//    $config->set('dbhost','escolesnuria');
-//    $db=$config->get('dbhost');
-//    echo $db;
 
