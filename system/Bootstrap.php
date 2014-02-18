@@ -59,16 +59,24 @@ class Bootstrap {
         public function route(){
             $classe=ucfirst(strtolower($this->getController())).'Controller';
             if (class_exists($classe)){
-                
                 $routeCont=new ReflectionClass($classe);
                 if($routeCont->hasMethod($this->getAction())){
                     $controller=$routeCont->newInstance($this->params);
                     $method=$routeCont->getMethod($this->getAction());
                     $method->invoke($controller);
                 }else{
-                    throw new Exception("No Action");
+                    //throw new Exception("No Action");
+                    $controller= new ErrorController(array('error'=>'No action'));
+                    $controller->index();
+                    
                 }
-            }else{throw new Exception("No Controller");}
+            }else{
+                //throw new Exception("No Controller");
+                $controller= new ErrorController(array('error'=>'No controller'));
+                $controller->index();
+                
+                }
+            
         }
         
 //        public function route(){
@@ -96,11 +104,7 @@ class Bootstrap {
 //                $this->request_not_found("");
 //            }
 //        }
-        function request_not_found($c) {
-                header("HTTP/1.1 404 Not Found");
-                die('<html><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL was not found on this server.</p>'.
-                        $c.'<p>Please go <a href="javascript: history.back(1)">back</a> and try again.</p><hr /><p>Powered By: <a href="http://calarroba.esy.es">Cal\'@</a></p></body></html>');
-        }
+       
         public function getController(){
             return $this->controller;
         }

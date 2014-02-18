@@ -12,11 +12,19 @@ class View  {
      * @properties propietats substituïbles al template i
      *  els seus valors en array associatiu.
      */
-    protected $template;
+    protected static $template;
+    protected static $head;
+    protected static $body;
+    protected static $foot;
     protected $properties;
     
     public function __construct() {
         $this->properties=array();
+        //definir capçalera i peus comuns en totes les plantilles
+        $file_h=APP.'public/themes/'.THEME.'/tpl/head.html';
+        self::$head=file_get_contents($file_h);
+        $file_f=APP.'public/themes/'.THEME.'/tpl/foot.html';
+        self::$foot=file_get_contents($file_f);
         
     }
    
@@ -24,8 +32,8 @@ class View  {
      * Estableix la plantilla
      * @param file $file
      */
-    public function setTemplate($file){
-        $this->template=  file_get_contents($file);
+    public static function setTemplate($file){
+        self::$template= self::$head.file_get_contents($file).self::$foot;
     }
     /**
      * Remplaçar propietats
@@ -56,12 +64,12 @@ class View  {
      * a través de l'array de propietats
      */
     private function transform(){
-        $html=  $this->template;
+        $html=  self::$template;
         if ($this->properties){
         foreach ($this->properties as $clau => $valor) {
             $html=str_replace('{'.$clau.'}',$valor, $html);
         }
-        $this->template=$html;
+        self::$template=$html;
         }
     }
     
@@ -71,7 +79,7 @@ class View  {
         $this->transform();
         // la funció eval permet utilitzar expressions
         // del tipus <?= $valor; dintre de la plantilla
-        eval('?>'.$this->template.'<?');
+        eval('?>'.self::$template.'<?');
         
         
     }

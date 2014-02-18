@@ -15,7 +15,7 @@
 class IndexController extends ControllerBase{
     protected $model;
     protected $view;
-    private $conf;
+    //private $conf;
     /**
      * rep con a paràmetre un array associatiu que 
      * permet passar els paràmetres de la URI
@@ -24,36 +24,43 @@ class IndexController extends ControllerBase{
     public function __construct($arr) {
         parent::__construct($arr);
        //carregar la configuració
-        $this->conf=$this->config;
-        $this->model= new IndexModel($arr);
-        $this->view=new View();
-        
+       $this->model= new IndexModel($arr);
+       $this->view=new View();
+       $this->view->setProp($this->model->getDataout());
+        //afegir configuració per ruta publica, enllaços, css ,js...
+        $this->view->addProp(array('APP_W'=>$this->config->APP_W));
+        $this->view->addProp(array('THEME'=>$this->config->THEME));
+        $this->view->setTemplate(APP.'/public/themes/'.$this->config->THEME.'/tpl/index.html');
+        $this->view->render();
         
        
     }
     public function index(){
                
-        $this->view->setProp($this->model->getDataout());
-        //afegir configuració per ruta publica, enllaços, css ,js...
-        $this->view->addProp(array('APP_W'=>$this->conf->APP_W));
-        $this->view->setTemplate(APP.'/public/tpl/index.php');
-        $this->view->render();
+        
         
         
     }
-    public function a(){
-        $this->model->a();
-        $this->view->setProp($this->model->getDataout());
-        $this->view->addProp($this->conf->getData());
-        $this->view->setTemplate(APP.'/public/tpl/index.php');
-        $this->view->render();
+//    public function a(){
+//        $this->model->a();
+//        $this->view->setProp($this->model->getDataout());
+//        $this->view->addProp($this->conf->getData());
+//        $this->view->setTemplate(APP.'/public/tpl/index.php');
+//        $this->view->render();
+//    }
+//    public function suma(){
+//        $this->model->suma();
+//        $sum=$this->model->getDataout();
+//        $this->view->setProp($this->model->getDataout());
+//        $this->view->addProp($this->conf->getData());
+//        $this->view->setTemplate(APP.'/public/tpl/index.php');
+//        $this->view->render();
+//    }
+    function login(){
+        
     }
-    public function suma(){
-        $this->model->suma();
-        $sum=$this->model->getDataout();
-        $this->view->setProp($this->model->getDataout());
-        $this->view->addProp($this->conf->getData());
-        $this->view->setTemplate(APP.'/public/tpl/index.php');
-        $this->view->render();
-    }
-}
+    
+} 
+       
+
+

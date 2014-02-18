@@ -3,25 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/NuriaMVC/system/Obrem.php</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/system/SPDO.php</file>
-            <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/css/estil.css</file>
-            <file>file:/C:/xampp/htdocs/NuriaMVC/system/Model.php</file>
-            <file>file:/C:/xampp/htdocs/NuriaMVC/.htaccess</file>
+            <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/themes/own/tpl/index.html</file>
+            <file>file:/C:/xampp/htdocs/NuriaMVC/application/models/ErrorModel.php</file>
+            <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/themes/own/css/estil.css</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/system/Bootstrap.php</file>
-            <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/tpl/index.php</file>
+            <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/themes/own/tpl/user.html</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/application/Config.json</file>
-            <file>file:/C:/xampp/htdocs/NuriaMVC/application/config.php</file>
-            <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/tpl/user.php</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/application/models/IndexModel.php</file>
-            <file>file:/C:/xampp/htdocs/NuriaMVC/system/Config.php</file>
-            <file>file:/C:/xampp/htdocs/NuriaMVC/application/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/NuriaMVC/application/controllers/ErrorController.php</file>
+            <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/themes/own/js/main.js</file>
+            <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/themes/own/tpl/head.html</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/application/controllers/UserController.php</file>
+            <file>file:/C:/xampp/htdocs/NuriaMVC/application/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/application/models/UserModel.php</file>
-            <file>file:/C:/xampp/htdocs/NuriaMVC/config.inc</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/index.php</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/system/View.php</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/system/ControllerBase.php</file>
+            <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/themes/own/tpl/foot.html</file>
         </group>
     </open-files>
 </project-private>

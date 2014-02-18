@@ -4,5 +4,6 @@
     "dbname":"agency",
     "dbhost":"localhost",
     "dbuser":"root",
-    "dbpass":"toor"
+    "dbpass":"toor",
+    "THEME":"own"
 }

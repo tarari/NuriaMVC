@@ -1,10 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  * Description of IndexController
@@ -15,7 +10,7 @@
 class UserController extends ControllerBase{
     protected $model;
     protected $view;
-    private $conf;
+    //private $conf;
     /**
      * rep con a paràmetre un array associatiu que 
      * permet passar els paràmetres de la URI
@@ -23,31 +18,29 @@ class UserController extends ControllerBase{
      */
     public function __construct($arr) {
         parent::__construct($arr);
-       //carregar la configuració
-        $this->conf=$this->config;
-        $this->model= new UserModel($arr);
+        $this->model= new IndexModel($arr);
         $this->view=new View();
-        
+        $this->view->setProp($this->model->getDataout());
+        //afegir configuració per ruta publica, enllaços, css ,js...
+        $this->view->addProp(array('APP_W'=>$this->config->APP_W));
+        $this->view->addProp(array('THEME'=>$this->config->THEME));
+        $this->view->setTemplate(APP.'/public/themes/'.$this->config->THEME.'/tpl/user.html');
+        $this->view->render();
         
        
     }
     public function index(){
                
-        $this->view->setProp($this->model->getDataout());
-        //afegir configuració per ruta publica, enllaços, css ,js...
-        $this->view->addProp(array('APP_W'=>$this->conf->APP_W));
-        $this->view->setTemplate(APP.'/public/tpl/user.php');
-        $this->view->render();
+        
         
         
     }
-    public function edit(){
-        $this->model->edit();
-        $this->view->setProp($this->model->getDataout());
-        //afegir configuració per ruta publica, enllaços, css ,js...
-        $this->view->addProp(array('APP_W'=>$this->conf->APP_W));
-        $this->view->setTemplate(APP.'/public/tpl/user.php');
-        $this->view->render();
+
+    function login(){
+        
     }
     
-}
+} 
+       
+
+
