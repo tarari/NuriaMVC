@@ -15,10 +15,10 @@ class IndexModel extends Model{
     
     public function __construct($arr) {
         parent::__construct($arr);
-        //parametres de configuració
-        $this->datain=$this->config;
-        //afegir en DataOut els paràmetres URI
-        $this->addDataout($arr);
+//        //parametres de configuració
+//        $this->datain=$this->config;
+//        //afegir en DataOut els paràmetres URI
+//        $this->addDataout($arr);
     }
     /**
      * Exemple de funció
@@ -46,5 +46,29 @@ class IndexModel extends Model{
         $this->exec($array);
         
     }
-    
+    function login($email,$password){
+        try{
+            $sql="SELECT * FROM usuaris WHERE email=? AND password=?";
+            $query=$this->db->prepare($sql);
+            $query->bindParam(1,$email);
+            $query->bindParam(2,$password);
+            $query->execute();
+            $res=$query->fetch();
+            if($query->rowCount()==1){
+                Session::set('islogged',TRUE);
+                Session::set('email',$email);
+                $user=  serialize(new usuari($res['nom'],$res['cognoms'],$res['email'],$res['idrol']));
+                print_r($user);
+              
+                Session::set($user);
+
+                return TRUE;
+            }
+            else {
+                Session::set('islogged',FALSE);
+                return FALSE;}
+        }catch(PDOException $e){
+            echo "Error:".$e->getMessage();
+        }
+    }
 }

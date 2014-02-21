@@ -17,9 +17,11 @@ class View  {
     protected static $body;
     protected static $foot;
     protected $properties;
+    protected $conf;
     
     public function __construct() {
         $this->properties=array();
+        $this->conf= Config::getInstance();
         //definir capçalera i peus comuns en totes les plantilles
         $file_h=APP.'public/themes/'.THEME.'/tpl/head.html';
         self::$head=file_get_contents($file_h);
@@ -33,7 +35,15 @@ class View  {
      * @param file $file
      */
     public static function setTemplate($file){
-        self::$template= self::$head.file_get_contents($file).self::$foot;
+        $compare=APP.'/public/themes/'.THEME.'/tpl/error.html';
+        // la tpl error es defineix de forma diferent
+        if ($file===$compare){
+            self::$template=  file_get_contents($file);
+        } else{
+            self::$body=  file_get_contents($file);
+            self::$template= self::$head.self::$body.self::$foot;
+        }
+        
     }
     /**
      * Remplaçar propietats

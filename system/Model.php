@@ -29,6 +29,10 @@ class Model {
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->datain=array();
         $this->dataout=$arr;
+         //parametres de configuració
+        $this->datain=$this->config;
+        //afegir en DataOut els paràmetres URI
+        $this->addDataout($arr);
 
     }
     

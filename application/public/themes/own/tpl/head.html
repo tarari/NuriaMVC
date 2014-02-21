@@ -15,6 +15,19 @@
 </head>
 <body>
        	<div id="header">
-              <div id="ident"><ul><li><a href="#"><span class="login">Login&nbsp;</span></a></li><li><a href="#"><span class="login">&nbsp;Cistell</span></a></li></ul></div>
+            <div id="barra">
+                
+             <div class="capsa">
+                 <ul>
+                      <li><a href="#"><div id="rlogin">Login&nbsp;</div></a></li>
+                      <li><a href="#"><div id="cistell">&nbsp;Cistell</div></a></li>
+                 </ul>
+                 <form  class="logindex" action="{APP_W}/Index/login" method="post">
+                    <label>email<input type="text" name="email" value="joe@linux" required></label>
+                    <label>password<input type="password" name="password" required></label>
+                    <input type="submit" value="Entra" class="imgbtn" id="logsend">
+                 </form> 
+             </div>
                     <h1 style="margin-bottom:0;"><a href="{APP_W}/">Travel Agency</<a></h1>
 	</div>
+        </div>

@@ -10,7 +10,7 @@
 class UserController extends ControllerBase{
     protected $model;
     protected $view;
-    //private $conf;
+   
     /**
      * rep con a paràmetre un array associatiu que 
      * permet passar els paràmetres de la URI
@@ -37,7 +37,7 @@ class UserController extends ControllerBase{
     }
 
     function login(){
-        
+        echo "DDDDDDDDDDDDDDDDD";
     }
     
 } 

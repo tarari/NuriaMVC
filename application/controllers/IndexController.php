@@ -57,9 +57,23 @@ class IndexController extends ControllerBase{
 //        $this->view->render();
 //    }
     function login(){
-        
+        if(isset($_POST['email'])){
+            $email=filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+            $password=md5(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING));
+            $user=$this->model->login($email,$password);
+            if ($user== TRUE){
+                $this->Redirect('index');
+                // cap a la pàgina principal
+                 //header('Location:'.APP_W.'/index/index');
+            }
+            else{
+                $this->Redirect('index','register');
+                
+                //header('Location:'.APP_W.'/index/register');
+                
+            }
     }
-    
+    }
 } 
        
 

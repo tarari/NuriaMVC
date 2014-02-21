@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/xampp/htdocs/NuriaMVC/system/SPDO.php</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/themes/own/tpl/index.html</file>
+            <file>file:/C:/xampp/htdocs/NuriaMVC/application/usuari.php</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/application/models/ErrorModel.php</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/themes/own/css/estil.css</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/system/Bootstrap.php</file>
@@ -16,6 +17,7 @@
             <file>file:/C:/xampp/htdocs/NuriaMVC/application/public/themes/own/tpl/head.html</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/application/controllers/UserController.php</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/application/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/NuriaMVC/config.inc</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/application/models/UserModel.php</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/index.php</file>
             <file>file:/C:/xampp/htdocs/NuriaMVC/system/View.php</file>

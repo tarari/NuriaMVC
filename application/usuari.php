@@ -11,5 +11,13 @@
         public $email;
         public $passwd;
         public $idrol;
+        
+        function __construct($nom,$cognoms,$email,$rol) {
+            $this->nom=$nom;
+            $this->cognoms=$cognoms;
+            $this->email=$email;
+            $this->idrol=$rol;
+            
+        }
               
     }

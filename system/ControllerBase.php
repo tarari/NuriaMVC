@@ -18,18 +18,29 @@ class ControllerBase {
       $this->config= Config::getInstance();
       $this->config->APP_W=  dirname(filter_input(INPUT_SERVER, 'SCRIPT_NAME',FILTER_SANITIZE_URL));
       $this->arguments=$arr;
-        /**
-         * instanciem model
-         */
-      //  $this->model=new Model($arr);
-      //  $this->view=new View();
-        
+           
     }
-    function Redirect($mod){
-        header('Location:'.APP.$mod);
-    }
+    /**
+     * 
+     * @param type $mod modul redirection
+     * @param type $action modul/action redirection
+     */
+    function Redirect($mod,$action){
+        if (isset($action)){
+            header('Location:'.APP_W.'/'.$mod.'/'.$action);
+        }
+        else{
+            header('Location:'.APP_W.'/'.$mod);
+        }
+        }
     
-    function ajax($arr){
-        return $arr;
+   /**
+    * 
+    * @param type $arr associative array
+    * @return type json
+    */ 
+   function ajax($arr){
+        $json=  json_encode($arr);
+        return $json;
     }
 }
