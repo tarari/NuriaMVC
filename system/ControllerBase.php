@@ -2,7 +2,7 @@
 
 
 /**
- * Description of ControllerBase
+ * Description of ControllerBase. Main controller it provides differents methods
  *
  * @author toni
  */
@@ -12,6 +12,7 @@ class ControllerBase {
     protected $view;
     protected $config;
     protected $arguments=array();
+    protected $_ajax;
     
   function __construct($arr) {
       //habilitat el Registry
@@ -36,11 +37,37 @@ class ControllerBase {
     
    /**
     * 
-    * @param type $arr associative array
+    * @param type $output json output
     * @return type json
     */ 
-   function ajax($arr){
-        $json=  json_encode($arr);
-        return $json;
+   protected function ajax_set($output){
+       
+          $output=  json_encode($output); 
+          ob_clean();
+          echo $output;
+          
+       }
+    
+    /**
+     * a partir del request seleccionem mètode
+     * i resposta en json
+     */
+    protected function Rest($arg){
+        switch ($request->method) {
+            case 'GET':
+                $request->parameters = $_GET;
+            break;
+            case 'POST':
+                $request->parameters = $_POST;
+            break;
+            case 'PUT':
+                parse_str(file_get_contents('php://input'), $request->parameters);
+                break;
+            case 'DELETE':
+                parse_str(file_get_contents('php://input'), $request->parameters);
+                break;
+            break;
+        }
     }
+
 }

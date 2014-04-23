@@ -22,7 +22,7 @@
             $this->model= new ErrorModel($arr);
             $this->arg=$arr;
             $this->view=new View();
-            $this->view->setTemplate(APP.'/public/themes/'.$this->conf->THEME.'/tpl/error.html');
+            $this->view->setTemplate('error');
             $this->view->addProp(array('APP_W'=>$this->conf->APP_W));
             $this->view->render();
         }

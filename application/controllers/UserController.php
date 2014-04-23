@@ -18,28 +18,30 @@ class UserController extends ControllerBase{
      */
     public function __construct($arr) {
         parent::__construct($arr);
-        $this->model= new IndexModel($arr);
-        $this->view=new View();
-        $this->view->setProp($this->model->getDataout());
+       //carregar la configuració
+       $this->model= new IndexModel($arr);
+       $this->view=new View();
+       $this->view->setProp($this->model->getDataout());
         //afegir configuració per ruta publica, enllaços, css ,js...
         $this->view->addProp(array('APP_W'=>$this->config->APP_W));
         $this->view->addProp(array('THEME'=>$this->config->THEME));
-        $this->view->setTemplate(APP.'/public/themes/'.$this->config->THEME.'/tpl/user.html');
+        $this->view->setTemplate('user');
         $this->view->render();
         
        
     }
     public function index(){
                
-        
-        
-        
+      
     }
 
-    function login(){
+    function register(){
         echo "DDDDDDDDDDDDDDDDD";
     }
     
+    function logout(){
+        Session::destroy();
+    }
 } 
        
 

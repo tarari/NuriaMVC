@@ -1,3 +1,8 @@
+@font-face
+{
+    font-family: Cicle;
+    src: url('fonts/Cicle_Fina.ttf');
+}
 *{
 	margin:0;
 	padding:0;
@@ -16,7 +21,14 @@
     background-color: darkslategray;
     
 }
-.capsa{
+
+a{
+    text-decoration: none;
+    color:orange;
+}
+
+#regist{display: inline-block;}
+#capsa{
     display:inline-block;
     width:100%;
     height: 30px;
@@ -25,25 +37,30 @@
     font-variant: small-caps;
     background-color: darkslategray;
 }
-.capsa ul{list-style: none;text-align: right;background-color: darkslategray; display: inline-block;}
-.capsa ul li{display: inline-block;}
-.capsa ul li a{color:#FFF;text-decoration: none;};
-.capsa ul li a:hover {color:#000;}
-.logindex{
+.menu ul {
+    list-style-type: none;
+    display: inline-block;
+}
+#capsa ul{list-style: none;text-align: right;background-color: darkslategray; display: inline-block;}
+#capsa ul li{display: inline-block;}
+#capsa ul li a{color:#FFF;text-decoration: none;};
+#capsa ul li a:hover {color:#000;}
+
+.ajax{
     float: right;
     
    
 }
-.capsa .logindex input[type=text],input[type=password]{
+#capsa .ajax input[type=text],input[type=password]{
    width:10em;
    font-size:80%;
    background-color: darkkhaki;
    margin-top: 4px;
 }
-.capsa .logindex input[value]{
+#capsa .ajax input[value]{
     color:grey;
 }
-.capsa .logindex input[type=submit]{
+#capsa .ajax input[type=submit]{
     background:no-repeat center darkkhaki;
     cursor:pointer;
     //width:40px;
@@ -62,37 +79,36 @@ body{
 	background-position:right top;
         font-family: Tahoma,sans-serif;
 }
+h1{
+    padding:10px;
+    font-family: Cicle;
+    font-weight: bold;
+}
 h1 a{
     text-decoration: none;
     color:#FFFFFF;
 }
 #container{
-	width:960px;
+	width:1100px;
 	margin: auto;
 	box-shadow: 3px 3px 3px #000;
 }
 
 
-
-#ident{
-    font-size: 75%;
-    display: inline-block;
-    width:50%;
-    height:30px;
-    float: right;
-    background-color: #000000;
+#output{
+    display:inline-block;
+    height: 100%;
+      
 }
-
-
-
 
 #content{
 	background-color:#EEEEEE;
-	height:420px;
+	height:450px;
 	
 }
 #footer{
 	background-color:darkkhaki;
+        display: block;
         clear:both;
         text-align:center;
         height:30px;
@@ -100,6 +116,7 @@ h1 a{
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         vertical-align:middle;
+      
 }
 #slide {
 	alignment-adjust: central;
@@ -107,31 +124,76 @@ h1 a{
         border:1px solid #d1d1da;
 	border-radius: 5px;
 	margin:5px;
-	height:400px;
+	height:98%;
 	width:520px;
 	float:left;
 	box-shadow: 3px 3px 3px #000;
-}
-#formlog{
-    font-family: Tahoma, sans-serif;
-    font-size:90%;
-    display:none;
-    padding: 3px;
-    margin-left: 10px;
-    margin-top: 10px;
-    width:350px;
-    height: 200px;
-    float:left;
-    margin: 0 auto;
-    margin-top: 9%;
-    background: #000;
-    color: #fff;
-    border: 6px solid #dc2d29;
+        display:inline-block;
 }
 
-.login{
-    font-variant: small-caps;
+
+#rlogin, #cistell{
+    font-variant:common-ligatures;
+    font-size:90%;
+}
+#rlogin p{
+    display:inline-block;
+}
+#rlogin a{
+    color:orange;
+}
+#rlogin a:hover{
+    text-decoration: underline;
 }
 .cistell{
-    font-variant: small-caps;
+    
 }
+
+.cookie-banner{
+    
+    font-family: Verdana,sans-serif;
+    font-size: 75%;
+    width:100%;
+    background-color: #333;
+    position:fixed;
+    top:0;
+    float:none;
+    clear:both;
+    display:none;
+
+}
+.cookie-banner .container{
+    margin:0 auto;
+    width:70%;
+    color:#f0f0f0;
+    padding:15px;
+}
+
+.cookie-banner a{
+    color:slategray;
+}
+.button{
+    background:#ccc;
+    color:#333;
+    text-decoration: none;
+    padding:5px 10px;
+    margin:3px;
+    border-radius:3px;
+    display:inline-block;
+    border:1px solid #aaa;
+    border-bottom: 3px solid #aaa;
+    
+}
+#imgload{
+    display:none;
+    
+}
+.buscador{
+    font-family: Cicle;
+    width: 90%;
+    height: 400px;
+    padding-left: 6px;
+    
+}
+
+

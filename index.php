@@ -3,7 +3,7 @@
     
     
      require 'config.inc';
-     set_include_path(get_include_path().DS.ROOT.'application');
+     //set_include_path(get_include_path().DS.ROOT.'application');
      set_include_path(get_include_path().DS.ROOT.'application/controllers');
      set_include_path(get_include_path().DS.ROOT.'application/models');
      // en config.php desem la configuració de l'aplicació
@@ -18,10 +18,11 @@
                
         static function run(){
             try{
-                Session::init();
-                $conf=Config::getInstance();
-                $conf->JSON();
                 
+                Session::init();
+                Session::set('id',  session_id());
+                $conf=Config::getInstance();
+                $conf->JSON();       
                 $front= Bootstrap::getInstance();
                 $front->route();
             } catch(Exception $e){

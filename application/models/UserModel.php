@@ -28,7 +28,7 @@ class UserModel extends Model{
      */
     function register($arr){
         $sql="CALL sp_nou_usuari(?,?,?,?,?)";
-        $stmt=$this->db->prepare("CALL sp_nou_usuari(?,?,?,?,?)");
+        $stmt=$this->db->prepare($sql);
         $stmt->execute($arr);
         
     }

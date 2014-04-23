@@ -56,12 +56,7 @@ class IndexModel extends Model{
             $res=$query->fetch();
             if($query->rowCount()==1){
                 Session::set('islogged',TRUE);
-                Session::set('email',$email);
-                $user=  serialize(new usuari($res['nom'],$res['cognoms'],$res['email'],$res['idrol']));
-                print_r($user);
-              
-                Session::set($user);
-
+                Session::set('user',new usuari($res['nom'],$res['cognoms'],$res['email'],$res['idrol']));
                 return TRUE;
             }
             else {
@@ -70,5 +65,16 @@ class IndexModel extends Model{
         }catch(PDOException $e){
             echo "Error:".$e->getMessage();
         }
-    }
+
+        }
+        
+        public function verificarEmail($email){
+            $id = $this->_db->query("select id from usuaris where email = '$email'");
+            if($id->fetch()){
+                return true;
+            }
+
+            return false;
+        }
 }
+

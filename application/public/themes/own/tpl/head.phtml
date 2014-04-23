@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+	<title>trav agency</title>
+	<meta charset="utf-8">
+	<!-- jQuery library (served from Google) -->
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+        <!-- bxSlider Javascript file -->
+        <script src="{APP_W}/application/public/themes/{THEME}/js/jquery.bxslider.min.js"></script>
+        <style type="text/css">
+            @import "<?php echo APP_W.'/application/public/themes/'.THEME.'/css/estil.css'?>";
+            @import "<?php echo APP_W.'/application/public/themes/'.THEME.'/css/busca.css'?>";
+            @import "<?php echo APP_W.'/application/public/themes/'.THEME.'/css/jquery.bxslider.css'?>";
+        </style>
+        <script src="{APP_W}/application/public/themes/{THEME}/js/main.js"></script>
+       
+        <script src="{APP_W}/application/public/themes/{THEME}/js/jquery.cookie.js"></script>
+</head>
+<body>  
+    <div id="header">
+         
+            <div id="barra">
+              <div id="capsa">
+                 <ul>
+                     <li>
+                         <div id="rlogin">
+                             <img id="imgload" src="{APP_W}/application/public/themes/{THEME}/img/bx_loader_lit.gif"/>
+                                                          
+                         </div></li>
+                      <li><div id="cistell">&nbsp;Cistell</div></li>
+                 </ul>
+                 <form  class="ajax" name="formlog" method="post" action="{APP_W}/index/login">
+                    <div id="regist"><a href="{APP_W}/user/register">Registrar</a></div>
+                    <label>email<input type="text" name="email" value="" placeholder="joe@de.com" required></label>
+                    <label>password<input type="password" name="password" required></label>
+                    <input type="submit" value="Entra"  id="logsend">
+                 </form> 
+              </div>
+                    <h1><a href="{APP_W}/">Travel Agency</a></h1>
+	</div>
+        </div>
+                      

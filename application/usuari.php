@@ -19,5 +19,18 @@
             $this->idrol=$rol;
             
         }
-              
+        function getNom(){
+            return $this->nom;
+        }
+        function getCognoms(){
+            return $this->cognoms;
+        }
+        function getEmail(){
+            return $this->email;
+        }
+        function setNom($nom){
+            $this->nom=$nom;
+            
+        }
+        
     }
